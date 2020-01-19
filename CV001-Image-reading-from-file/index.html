@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="IMPORTFirstly, importing three things before beginning. They are cv2, mataplotlib.pyplot and numpy.  Image readingIt has method called imread, the first parameter is the path of image, second one is 1">
+<meta name="description" content="ImportFirstly, importing three things before beginning. They are cv2, mataplotlib.pyplot and numpy.  Image readingIt has method called imread, the first parameter is the path of image, second one is 1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CV001: Image reading from file">
 <meta property="og:url" content="http://cagyj.github.io/CV001-Image-reading-from-file/index.html">
 <meta property="og:site_name" content="CagyJ">
-<meta property="og:description" content="IMPORTFirstly, importing three things before beginning. They are cv2, mataplotlib.pyplot and numpy.  Image readingIt has method called imread, the first parameter is the path of image, second one is 1">
+<meta property="og:description" content="ImportFirstly, importing three things before beginning. They are cv2, mataplotlib.pyplot and numpy.  Image readingIt has method called imread, the first parameter is the path of image, second one is 1">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.postimg.cc/WbbbHJN3/1.png">
 <meta property="og:image" content="https://i.postimg.cc/dVgs3H8k/2.png">
@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://i.postimg.cc/qqm0TjJ7/10.png">
 <meta property="og:image" content="https://i.postimg.cc/d3QvpzKX/11.png">
 <meta property="article:published_time" content="2020-01-19T08:58:55.000Z">
-<meta property="article:modified_time" content="2020-01-19T13:51:25.188Z">
+<meta property="article:modified_time" content="2020-01-19T14:01:22.333Z">
 <meta property="article:author" content="Cagy Jiao">
 <meta property="article:tag" content="-Computer Vision">
 <meta name="twitter:card" content="summary">
@@ -322,14 +322,14 @@
       
 
       
-        <h3 id="IMPORT"><a href="#IMPORT" class="headerlink" title="IMPORT"></a>IMPORT</h3><p>Firstly, importing three things before beginning. They are <strong>cv2</strong>, <strong>mataplotlib.pyplot</strong> and <strong>numpy</strong>.</p>
+        <h2 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h2><p>Firstly, importing three things before beginning. They are <strong>cv2</strong>, <strong>mataplotlib.pyplot</strong> and <strong>numpy</strong>.</p>
 <p><img src="https://i.postimg.cc/WbbbHJN3/1.png" alt="cv001_1"></p>
-<h3 id="Image-reading"><a href="#Image-reading" class="headerlink" title="Image reading"></a>Image reading</h3><p>It has method called <strong>imread</strong>, the first parameter is the path of image, second one is <strong>1</strong> or <strong>0</strong>. <strong>1</strong> is represented as color picture and <strong>0</strong> is black and white.</p>
+<h2 id="Image-reading"><a href="#Image-reading" class="headerlink" title="Image reading"></a>Image reading</h2><p>It has method called <strong>imread</strong>, the first parameter is the path of image, second one is <strong>1</strong> or <strong>0</strong>. <strong>1</strong> is represented as color picture and <strong>0</strong> is black and white.</p>
 <p><img src="https://i.postimg.cc/dVgs3H8k/2.png" alt="cv001_2"></p>
 <p>And <strong>shape</strong> method will show the data of this image, it return a tuple and first element is the height of this image, second is the width and third one is represented as the numbers of pixel channel. For example, (100,100,3) is 100px height, 100px width and have three channels (RGB).</p>
 <p><img src="https://i.postimg.cc/LsfH1tTy/3.png" alt="cv001_3"></p>
 <p>Tips: add a ‘?’ after method in Jupyter notebook and run, you will see the parameter needed and deo. And another way, move cursor on the method and press <strong>TAB</strong>+<strong>SHIFT</strong>.</p>
-<h3 id="Image-show"><a href="#Image-show" class="headerlink" title="Image show"></a>Image show</h3><p>There are two ways to show a image.</p>
+<h2 id="Image-show"><a href="#Image-show" class="headerlink" title="Image show"></a>Image show</h2><p>There are two ways to show a image.</p>
 <h4 id="CV2"><a href="#CV2" class="headerlink" title="CV2"></a>CV2</h4><p>Using <strong>imshow</strong> method, which has two parameter, first one is the name of image and second one is the variable of image. But it will be an <em>ERROR</em> if we just use <strong>imshow</strong>. Define a variable called <em>key</em>, which is represented as the value of keyboard input via <strong>waitKey</strong> method. And when <em>key</em> is 27 (ESC, mostly use), shut down any windows (<strong>cv2.destroyAllWindows()</strong>).</p>
 <p><img src="https://i.postimg.cc/rmNMhq7x/4.png" alt="cv001_4"></p>
 <p><img src="https://i.postimg.cc/YS1H9prZ/5.png" alt="cv001_5"></p>
@@ -348,7 +348,7 @@
 <p><img src="https://i.postimg.cc/d3QvpzKX/11.png" alt="cv001_11"></p>
 <p>Click this <a href="https://github.com/CagyJ/CV/blob/master/CVFundamental/lowLevel/showImage.py" target="_blank" rel="noopener">link</a> to get the code in my github, you can download and import it if you need. And everything above is tested via Jupyter notebook. </p>
 <hr>
-<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><blockquote>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><blockquote>
 <p>Illustrator /  <strong>Cagy</strong>     </p>
 <p>Text /  <strong>Cagy</strong>     </p>
 <p>Editor /  <strong>Cagy</strong></p>
@@ -576,7 +576,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#IMPORT"><span class="nav-number">1.</span> <span class="nav-text">IMPORT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-reading"><span class="nav-number">2.</span> <span class="nav-text">Image reading</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-show"><span class="nav-number">3.</span> <span class="nav-text">Image show</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CV2"><span class="nav-number">3.1.</span> <span class="nav-text">CV2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mataplotlib-pyplot"><span class="nav-number">3.2.</span> <span class="nav-text">mataplotlib.pyplot</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">4.</span> <span class="nav-text">End</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Import"><span class="nav-number">1.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-reading"><span class="nav-number">2.</span> <span class="nav-text">Image reading</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-show"><span class="nav-number">3.</span> <span class="nav-text">Image show</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CV2"><span class="nav-number">3.0.1.</span> <span class="nav-text">CV2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mataplotlib-pyplot"><span class="nav-number">3.0.2.</span> <span class="nav-text">mataplotlib.pyplot</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number">4.</span> <span class="nav-text">End</span></a></li></ol></div>
             
 
           </div>
