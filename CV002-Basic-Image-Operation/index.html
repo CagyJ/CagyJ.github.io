@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="No pain no gain">
+<meta name="description" content="It is a low-level of CV, like photoshop. Let’s start to do some basic operations. Image CropTurn to last article, we saw the coordinate on the left side and bottom side of the image.   Obviously, we c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CV002: Basic Image Operation">
 <meta property="og:url" content="http://cagyj.github.io/CV002-Basic-Image-Operation/index.html">
 <meta property="og:site_name" content="CagyJ">
-<meta property="og:description" content="No pain no gain">
+<meta property="og:description" content="It is a low-level of CV, like photoshop. Let’s start to do some basic operations. Image CropTurn to last article, we saw the coordinate on the left side and bottom side of the image.   Obviously, we c">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-20T19:52:08.000Z">
-<meta property="article:modified_time" content="2020-01-20T19:53:05.506Z">
+<meta property="article:modified_time" content="2020-01-22T17:22:10.877Z">
 <meta property="article:author" content="Cagy Jiao">
 <meta property="article:tag" content="-Computer Vision">
 <meta name="twitter:card" content="summary">
@@ -310,7 +310,42 @@
       
 
       
-        
+        <p>It is a low-level of CV, like photoshop. Let’s start to do some basic operations.</p>
+<h3 id="Image-Crop"><a href="#Image-Crop" class="headerlink" title="Image Crop"></a>Image Crop</h3><p>Turn to last article, we saw the coordinate on the left side and bottom side of the image. </p>
+<p><img src="" alt="cv002_1"></p>
+<p>Obviously, we crop the image through the input of coordinate. The grammar is easier. <strong>img_var[y1:y2, x1:x2]</strong> , the <strong>y</strong> is first and <strong>x</strong> is second one. Why do we need two coordinates? OK, let’s mark it on the image. </p>
+<p><img src="" alt="cv002_2"></p>
+<p>As we see, we just need two pair of points to sure a area. So do it in code. </p>
+<p><img src="" alt="cv002_3"></p>
+<p>Successfully! Is the input way complicate? We can define a function to do those all.</p>
+<p><img src="" alt="cv002_4"></p>
+<p>Hahahhh, this way we do not need to think about the reverse coordinate, we just input the picture variable, point 1 (x1,y1) and point 2 (x2,y2).</p>
+<h3 id="Image-Rotation"><a href="#Image-Rotation" class="headerlink" title="Image Rotation"></a>Image Rotation</h3><p>It is more complicate as crop. First, we need a cv2 method, called <strong>getRotationMatrix2D</strong> , and the first parameter is the center of the image (we usually use <strong>shape</strong> method to solve it), second is the angle that you want to rotate and third one is the scale. Yeah, we trans it to matrix first. Actually, we change the matrix of origin image to a new one that we wanted. Then, another cv2 method, called <strong>warpAffine</strong>, which works on rotation image. So the first parameter is the variable of the image, second one is the matrix changed from last step(<strong>getRotationMatrix2D</strong>) and last is the tuple of width and height of origin image (It is also from method <strong>shape</strong>). Thus, we define a function to make it easier. </p>
+<p><img src="" alt="cv002_5"></p>
+<h3 id="Resize-a-Image"><a href="#Resize-a-Image" class="headerlink" title="Resize a Image"></a>Resize a Image</h3><p>We need a pixel of width and then calculate the ratio of the new width to the old one.  Then construct the new dimensions of the new image and the height is the product of the ratio and the height of old image. Almost done, we use a cv2 method, called <strong>resize</strong>, and the first parameter is the variable of image, the second one is the dimension and the last is interpolation (usually is cv2.INTER_AREA). Thus, we define this function.</p>
+<p><img src="" alt="cv002_6"></p>
+<h3 id="Channel-Split"><a href="#Channel-Split" class="headerlink" title="Channel Split"></a>Channel Split</h3><p>It is about color channel, we know it a little before. When we use <strong>shape</strong> method, we can see the third element is 3 if it is a color image, which is represented as BGR (blue, green, red). Using <strong>split</strong> method to split the BGR of a image.</p>
+<p><img src="" alt="cv002_7"></p>
+<p>Now, we can output any one of BGR:</p>
+<p><img src="" alt="cv002_8"></p>
+<p>As we see, it is an array and the <strong>dtype</strong> (data type) is uint8, which means integer without character. And the range is from 0 to 255, actually, it is represented as the  brightness. Besides, the image of B, G and R is are grayscale image. Let’s see these three image via opencv.</p>
+<p><img src="" alt="cv2_9"></p>
+<p><img src="" alt="cv2_10"></p>
+<p>Obviously, the image of R is the most bright, because the number of R array is bigger than B and G.</p>
+<p>Let’s do some interests. Because of the rule of BGR, we know that if the value of B and G is increasing, the image will be cooler and if for R is increasing, the image will be warmer.</p>
+<p><img src="" alt="cv2_11"></p>
+<p>Okay, let’s change the value of B and R channels to get a cooler image.</p>
+<p><img src="" alt="cv2_12"></p>
+<p>Split the BGR firstly, find the limitation of the value of B and R. Because we wanna increase the B, we use the maximum value 255 to differ the value of input increasing value, then we get a limitation of B. It means if the value in B is great than it, it should be 255, else it will be added the increased value. For R limitation is also. Let’s see the changes.</p>
+<p><img src="" alt="cv2_13"></p>
+<hr>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><blockquote>
+<p>Illustrator /  <strong>Cagy</strong>     </p>
+<p>Text /  <strong>Cagy</strong>     </p>
+<p>Editor /  <strong>Cagy</strong></p>
+<p>Design /  <strong>Cagy</strong></p>
+</blockquote>
+
       
     </div>
     
@@ -439,8 +474,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -513,6 +557,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-Crop"><span class="nav-number">1.</span> <span class="nav-text">Image Crop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-Rotation"><span class="nav-number">2.</span> <span class="nav-text">Image Rotation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resize-a-Image"><span class="nav-number">3.</span> <span class="nav-text">Resize a Image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Channel-Split"><span class="nav-number">4.</span> <span class="nav-text">Channel Split</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End"><span class="nav-number"></span> <span class="nav-text">End</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
