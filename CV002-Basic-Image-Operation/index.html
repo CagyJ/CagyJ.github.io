@@ -99,6 +99,7 @@
 <meta property="og:image" content="https://i.postimg.cc/K8TmqSmr/11.png">
 <meta property="og:image" content="https://i.postimg.cc/KYX8xc0H/12.png">
 <meta property="og:image" content="https://i.postimg.cc/7hLxm5Lf/13.png">
+<meta property="og:image" content="https://i.postimg.cc/TwxtgmPv/ext.png">
 <meta property="og:image" content="https://i.postimg.cc/Jhb4nwg4/14.png">
 <meta property="og:image" content="https://i.postimg.cc/3wHYzSRM/15.png">
 <meta property="og:image" content="https://i.postimg.cc/bvD8G7B2/16.png">
@@ -108,7 +109,7 @@
 <meta property="og:image" content="https://i.postimg.cc/1RWR4rW6/20.png">
 <meta property="og:image" content="https://i.postimg.cc/CKHS0GBR/21.png">
 <meta property="article:published_time" content="2020-01-20T19:52:08.000Z">
-<meta property="article:modified_time" content="2020-01-23T12:55:21.929Z">
+<meta property="article:modified_time" content="2020-01-23T13:06:26.661Z">
 <meta property="article:author" content="Cagy Jiao">
 <meta property="article:tag" content="-Computer Vision">
 <meta name="twitter:card" content="summary">
@@ -361,6 +362,7 @@
 <p>Split the BGR firstly, find the limitation of the value of B and R. Because we wanna increase the B, we use the maximum value 255 to differ the value of input increasing value, then we get a limitation of B. It means if the value in B is great than it, it should be 255, else it will be added the increased value. For R limitation is also. Let’s see the changes.</p>
 <p><img src="https://i.postimg.cc/7hLxm5Lf/13.png" alt="cv2_13"></p>
 <p>And be careful, be sure the type of the new array of the color channel and the color channel of Opencv is BGR, Matplotlib is RGB and pillow is RGB also. Besides, I will write down the image warmer also and update on my github.</p>
+<p><img src="https://i.postimg.cc/TwxtgmPv/ext.png" alt="cv2_ext"></p>
 <h3 id="Gamma-Change"><a href="#Gamma-Change" class="headerlink" title="Gamma Change"></a>Gamma Change</h3><p>We can change the value of the gamma to turn a image more bright and less.Use a method <strong>cv2.LUT</strong> to show a image quickly via a table. About gamma, you can search in Google.</p>
 <p><img src="https://i.postimg.cc/Jhb4nwg4/14.png" alt="cv2_14"></p>
 <p>And let’s read a dark image to test it.</p>
@@ -380,7 +382,7 @@
 <p><img src="https://i.postimg.cc/1RWR4rW6/20.png" alt="cv2_20"></p>
 <hr>
 <p><img src="https://i.postimg.cc/CKHS0GBR/21.png" alt="cv2_21"></p>
-<p>Ending for it and it will be transform and erode, dilate next. And if you need, you can click <strong><a href="">this link</a></strong> to see the code on my github.</p>
+<p>Ending for it and it will be transform and erode, dilate next. And if you need, you can click <strong><a href="">this link</a></strong> to see all the code on my github.</p>
 <hr>
 <h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3><blockquote>
 <p>Illustrator /  <strong>Cagy</strong>     </p>
