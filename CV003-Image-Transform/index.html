@@ -86,11 +86,17 @@
 <meta property="og:site_name" content="CagyJ">
 <meta property="og:description" content="Here, I would like to introduce a basic operation of CV, transform. It is a very import part, which is Similarity Transform, Affine Transform and Perspective Transform. Similarity TransformActually, s">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.postimg.cc/6pRRs7qn/3.png">
+<meta property="og:image" content="https://i.postimg.cc/KY2TmZ3V/2.png">
+<meta property="og:image" content="https://i.postimg.cc/HsF5P0YT/1.png">
+<meta property="og:image" content="https://i.postimg.cc/T34k4pkr/4.png">
+<meta property="og:image" content="https://i.postimg.cc/5tQPdbGD/5.png">
 <meta property="article:published_time" content="2020-01-27T13:58:38.000Z">
-<meta property="article:modified_time" content="2020-02-04T13:06:30.366Z">
+<meta property="article:modified_time" content="2020-02-04T14:16:52.498Z">
 <meta property="article:author" content="Cagy Jiao">
 <meta property="article:tag" content="-Computer Vision">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/6pRRs7qn/3.png">
 
 
 
@@ -311,9 +317,18 @@
 
       
         <p>Here, I would like to introduce a basic operation of CV, transform. It is a very import part, which is Similarity Transform, Affine Transform and Perspective Transform.</p>
-<h3 id="Similarity-Transform"><a href="#Similarity-Transform" class="headerlink" title="Similarity Transform"></a>Similarity Transform</h3><p>Actually, similarity transform is rotation, translation and scale. So we need two point pairs. Features: regard (0,0) (default: left-top) as base, scale and rotate around (0,0), then translate to the new center. Importantly, the angle of two lines in the image is fixed and proportion is fixed, besides, the type of  the line is fixed.</p>
+<h3 id="Similarity-Transform"><a href="#Similarity-Transform" class="headerlink" title="Similarity Transform"></a>Similarity Transform</h3><p>Actually, similarity transform is rotation, translation and scale. So we need two point pairs. Features: regard (0,0) (default: left-top) as base, scale and rotate around (0,0), then translate to the new center. Importantly, the angle of two lines in the image is fixed and proportion is fixed, besides, the type of  the line is fixed. </p>
+<p>We need import a new lib if we wanna do it. It is called <strong>skimage</strong> and we need the function <strong>transform</strong> to use <strong>SimilarityTransform</strong>. </p>
+<p><img src="https://i.postimg.cc/6pRRs7qn/3.png" alt="cv003_3"></p>
 <h3 id="Affine-Transform"><a href="#Affine-Transform" class="headerlink" title="Affine Transform"></a>Affine Transform</h3><p>Same  as Similarity transform, but the angle is not fixed and we need three point pairs(Non-Collinear).</p>
+<p><img src="https://i.postimg.cc/KY2TmZ3V/2.png" alt="cv003_2"></p>
 <h3 id="Perspective-Transform"><a href="#Perspective-Transform" class="headerlink" title="Perspective Transform"></a>Perspective Transform</h3><p>Same as Affine Transform, but only the type of line is fixed. We need 4 point pairs to determine it.</p>
+<p><img src="https://i.postimg.cc/HsF5P0YT/1.png" alt="CV003_1"></p>
+<h3 id="More"><a href="#More" class="headerlink" title="More"></a>More</h3><p>Besides, I will show you two more things that are image erode and image dilate.</p>
+<h4 id="Erode"><a href="#Erode" class="headerlink" title="Erode"></a>Erode</h4><p>That is very easy, we have a function <strong>erode</strong> in cv2. And the bigger the value of iterations is, the thicker the font is.</p>
+<p><img src="https://i.postimg.cc/T34k4pkr/4.png" alt="cv003_4"></p>
+<h4 id="Dilate"><a href="#Dilate" class="headerlink" title="Dilate"></a>Dilate</h4><p><img src="https://i.postimg.cc/5tQPdbGD/5.png" alt="cv003_5"></p>
+<p>Ending! And if you need, you can click <strong><a href="https://github.com/CagyJ/CV/blob/master/CVFundamental/lowLevel/transform.py" target="_blank" rel="noopener">this link</a></strong> to see all the code on my github.</p>
 <hr>
 <h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3><blockquote>
 <p>Illustrator /  <strong>Cagy</strong>     </p>
@@ -543,7 +558,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Similarity-Transform"><span class="nav-number">1.</span> <span class="nav-text">Similarity Transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Affine-Transform"><span class="nav-number">2.</span> <span class="nav-text">Affine Transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Perspective-Transform"><span class="nav-number">3.</span> <span class="nav-text">Perspective Transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#END"><span class="nav-number">4.</span> <span class="nav-text">END</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Similarity-Transform"><span class="nav-number">1.</span> <span class="nav-text">Similarity Transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Affine-Transform"><span class="nav-number">2.</span> <span class="nav-text">Affine Transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Perspective-Transform"><span class="nav-number">3.</span> <span class="nav-text">Perspective Transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More"><span class="nav-number">4.</span> <span class="nav-text">More</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Erode"><span class="nav-number">4.1.</span> <span class="nav-text">Erode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dilate"><span class="nav-number">4.2.</span> <span class="nav-text">Dilate</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#END"><span class="nav-number">5.</span> <span class="nav-text">END</span></a></li></ol></div>
             
 
           </div>
