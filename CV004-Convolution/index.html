@@ -87,7 +87,7 @@
 <meta property="og:description" content="IntroductionIt is different from math. But, it is similar. There is 1-dim convolution, 2-dim convolution, 3-dim convolution and 4-dim convolution. And for image, we use 2-dim convolution. Besides, we">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-05T16:38:56.000Z">
-<meta property="article:modified_time" content="2020-02-06T00:42:20.334Z">
+<meta property="article:modified_time" content="2020-02-12T17:58:01.479Z">
 <meta property="article:author" content="Cagy Jiao">
 <meta property="article:tag" content="-Computer Vision">
 <meta name="twitter:card" content="summary">
@@ -441,6 +441,11 @@
 <p><img src="" alt="cv004_4"></p>
 <p>And change the kernel to (11,11):</p>
 <p><img src="" alt="cv004_5"></p>
+<p>OK, we can also do it from another way.</p>
+<p>There is a function, called <strong>getGaussianKernel</strong> of <strong>cv2</strong>. The firstparameter is the kernel and second is variance. And another function, called <strong>sepFilter2D</strong>. The first is the source of image, second is the depth and third is convolution on X axis, forth is on Y. </p>
+<p>And we do the same thing as before, the kernel is 11 and the variance is 200. Let’s see:</p>
+<p><img src="" alt="cv004_6"></p>
+<p>They are almost same.</p>
 <hr>
 <h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3><blockquote>
 <p>Illustrator /  <strong>Cagy</strong>     </p>
