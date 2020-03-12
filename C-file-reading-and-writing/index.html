@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="-C++ -file stream," />
+  <meta name="keywords" content="-C++," />
 
 
 
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="No pain no gain">
+<meta name="description" content="Firstly, everything you do before, do not forget to import “&lt;fstream&gt;”. 1include &lt;fstream&gt;    Three common operations in “&lt;fstream&gt;”As a noob in C++, I will only introduce these thre">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++: file reading and writing">
 <meta property="og:url" content="http://cagyj.github.io/C-file-reading-and-writing/index.html">
 <meta property="og:site_name" content="CagyJ">
-<meta property="og:description" content="No pain no gain">
+<meta property="og:description" content="Firstly, everything you do before, do not forget to import “&lt;fstream&gt;”. 1include &lt;fstream&gt;    Three common operations in “&lt;fstream&gt;”As a noob in C++, I will only introduce these thre">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-12T15:00:58.000Z">
-<meta property="article:modified_time" content="2020-03-12T15:02:48.995Z">
+<meta property="article:modified_time" content="2020-03-12T17:21:53.386Z">
 <meta property="article:author" content="Cagy Jiao">
-<meta property="article:tag" content="-C++ -file stream">
+<meta property="article:tag" content="-C++">
 <meta name="twitter:card" content="summary">
 
 
@@ -310,7 +310,81 @@
       
 
       
-        
+        <p>Firstly, everything you do before, do not forget to import “&lt;fstream&gt;”.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include &lt;fstream&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Three-common-operations-in-“-lt-fstream-gt-”"><a href="#Three-common-operations-in-“-lt-fstream-gt-”" class="headerlink" title="Three common operations in “&lt;fstream&gt;”"></a>Three common operations in “&lt;fstream&gt;”</h3><p>As a noob in C++, I will only introduce these three in this post. If I am gonna be in higher level someday, I will write down more about them, even whole thing. </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ofstream   <span class="comment">//write</span></span><br><span class="line">ifstream	<span class="comment">//read</span></span><br><span class="line">fstream		<span class="comment">//write and read</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Open-a-File"><a href="#Open-a-File" class="headerlink" title="Open a File"></a>Open a File</h3><p>In class “&lt;fstream&gt;”, there is an inner function <strong>open()</strong>, which is work on it through <strong><em>ofstream</em></strong>, <strong><em>ifstream</em></strong> and <strong><em>fstream</em></strong> objects.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.<span class="built_in">open</span>(filename, mode, prot)</span><br></pre></td></tr></table></figure>
+
+<p>There are three parameters in this function, first one is the <strong>filename</strong>, second is the <strong>way</strong> to open it( <a href="http://www.cplusplus.com/doc/tutorial/files/" target="_blank" rel="noopener">more..</a>) and third one is the <strong>character</strong> of the file( unusual using).</p>
+<p>Here, I would like to say a little bit more about class “&lt;ios&gt;”.</p>
+<table>
+<thead>
+<tr>
+<th>ios::in</th>
+<th>open a file for input</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ios::out</td>
+<td>open a file for output</td>
+</tr>
+<tr>
+<td>ios::ate</td>
+<td>initial position: end of the file</td>
+</tr>
+<tr>
+<td>ios::app</td>
+<td>output in the end of the file</td>
+</tr>
+<tr>
+<td>ios::binary</td>
+<td>open a file via binary</td>
+</tr>
+</tbody></table>
+<p>Normally, we use them in combination. So, we do this way:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fstream f;</span><br><span class="line">f.<span class="built_in">open</span>(<span class="string">"test.txt"</span>, ios::in|ios::out|ios::binary)</span><br></pre></td></tr></table></figure>
+
+<p>Otherwise, here is also a default way without function <strong>open()</strong>, cpp has prepare it in . We can use them directly:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ofstream out(&quot;...&quot;, ios::out);</span><br><span class="line">ifstream in(&quot;...&quot;, ios::in);</span><br><span class="line">fstream foi(&quot;...&quot;, ios::in|ios::out);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Close-a-File"><a href="#Close-a-File" class="headerlink" title="Close a File"></a>Close a File</h3><p>As <strong>open()</strong> function, here is also a function for closing, which is <strong>close()</strong>.</p>
+<p>After closing, the original object can open another file.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ofstream of;</span><br><span class="line">of.open(&quot;hello.txt&quot;);</span><br><span class="line">of.close();</span><br><span class="line">of.open(&quot;hi.txt&quot;);</span><br><span class="line">...</span><br><span class="line">of.close();</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Reading-and-Writing-on-txt-file"><a href="#Reading-and-Writing-on-txt-file" class="headerlink" title="Reading and Writing on txt file"></a>Reading and Writing on txt file</h3><h4 id="Read"><a href="#Read" class="headerlink" title="Read"></a>Read</h4><p>Same as outputting in the terminal, we can also use <strong>&lt;&lt;</strong> to write the data into a file. (Extension: end of the post)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void openFile(string fileName)&#123;</span><br><span class="line">    string data;</span><br><span class="line">    ifstream in;</span><br><span class="line">    in.open(fileName.c_str());</span><br><span class="line">    if(in.is_open())&#123;</span><br><span class="line">        while(!in.eof())&#123;</span><br><span class="line">            string line;</span><br><span class="line">            getline(in, line);</span><br><span class="line">            cout&lt;&lt;line&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Write"><a href="#Write" class="headerlink" title="Write"></a>Write</h4><p>Using <strong>&gt;&gt;</strong> as well…</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">writeFile</span><span class="params">(<span class="built_in">string</span> fileName)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ofstream out;</span><br><span class="line">    out.<span class="built_in">open</span>(fileName);</span><br><span class="line">    <span class="keyword">if</span>(out.is_open())&#123;</span><br><span class="line">        out&lt;&lt;<span class="string">"test1\n"</span>;</span><br><span class="line">        out&lt;&lt;<span class="string">"test2\n"</span>;</span><br><span class="line"></span><br><span class="line">        out.<span class="built_in">close</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Extension"><a href="#Extension" class="headerlink" title="Extension"></a>Extension</h3><p>About <strong>cin.ignore()</strong>, it is used when you wanna ignore the last input in the terminal. Usually, the first input may effects the next one.  It is a solution for that problem, it will clear everything after enter including enter.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;  </span><br><span class="line">using   namespace   std;  </span><br><span class="line">int main()  </span><br><span class="line">&#123;  </span><br><span class="line">    char   str1[30],str2[30],str3[30];  </span><br><span class="line">    cout   &lt;&lt;   &quot;Name：&quot;;  </span><br><span class="line">    cin&gt;&gt;str1;  </span><br><span class="line">    cout&lt;&lt;&quot;Address：&quot;;  </span><br><span class="line">    cin.ignore();  </span><br><span class="line">    cin.getline(str2,30,&#39;a&#39;);   </span><br><span class="line">    cout&lt;&lt;str2;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Thanks for your reading. I am happy, if it is useful for you.</p>
+<hr>
+<h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3><blockquote>
+<p>Illustrator /  <strong>Cagy</strong>     </p>
+<p>Text /  <strong>Cagy</strong>     </p>
+<p>Editor /  <strong>Cagy</strong></p>
+<p>Design /  <strong>Cagy</strong></p>
+</blockquote>
+
       
     </div>
     
@@ -351,7 +425,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C-file-stream/" rel="tag"># -C++ -file stream</a>
+            <a href="/tags/C/" rel="tag"># -C++</a>
           
         </div>
       
@@ -439,8 +513,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -513,6 +596,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Three-common-operations-in-“-lt-fstream-gt-”"><span class="nav-number">1.</span> <span class="nav-text">Three common operations in “&lt;fstream&gt;”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Open-a-File"><span class="nav-number">2.</span> <span class="nav-text">Open a File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Close-a-File"><span class="nav-number">3.</span> <span class="nav-text">Close a File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reading-and-Writing-on-txt-file"><span class="nav-number">4.</span> <span class="nav-text">Reading and Writing on txt file</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Read"><span class="nav-number">4.1.</span> <span class="nav-text">Read</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Write"><span class="nav-number">4.2.</span> <span class="nav-text">Write</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Extension"><span class="nav-number">5.</span> <span class="nav-text">Extension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#END"><span class="nav-number">6.</span> <span class="nav-text">END</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
