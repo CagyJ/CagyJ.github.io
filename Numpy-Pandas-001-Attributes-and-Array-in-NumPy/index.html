@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="C++," />
+  <meta name="keywords" content="Numpy,Pandas," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="Firstly, everything you do before, do not forget to import “&lt;fstream&gt;”. 1include &lt;fstream&gt;    Three common operations in “&lt;fstream&gt;”As a noob in C++, I will only introduce these thre">
+<meta name="description" content="At first, import the numpy. Normally, we will import it as np for calling it easily. 1import numpy as np    AttributesUsing a method called array to turn a list to an array. 12array &#x3D; np.array([[1,2,1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++: file reading and writing">
-<meta property="og:url" content="http://cagyj.github.io/C-file-reading-and-writing/index.html">
+<meta property="og:title" content="Numpy&amp;Pandas 001: Attributes and Array in NumPy">
+<meta property="og:url" content="http://cagyj.github.io/Numpy-Pandas-001-Attributes-and-Array-in-NumPy/index.html">
 <meta property="og:site_name" content="CagyJ">
-<meta property="og:description" content="Firstly, everything you do before, do not forget to import “&lt;fstream&gt;”. 1include &lt;fstream&gt;    Three common operations in “&lt;fstream&gt;”As a noob in C++, I will only introduce these thre">
+<meta property="og:description" content="At first, import the numpy. Normally, we will import it as np for calling it easily. 1import numpy as np    AttributesUsing a method called array to turn a list to an array. 12array &#x3D; np.array([[1,2,1">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-12T15:00:58.000Z">
-<meta property="article:modified_time" content="2020-03-12T20:58:03.600Z">
+<meta property="article:published_time" content="2020-03-12T23:24:13.000Z">
+<meta property="article:modified_time" content="2020-03-13T10:51:00.043Z">
 <meta property="article:author" content="Cagy Jiao">
-<meta property="article:tag" content="C++">
+<meta property="article:tag" content="Numpy">
+<meta property="article:tag" content="Pandas">
 <meta name="twitter:card" content="summary">
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://CagyJ.github.io/C-file-reading-and-writing/"/>
+  <link rel="canonical" href="http://CagyJ.github.io/Numpy-Pandas-001-Attributes-and-Array-in-NumPy/"/>
 
 
 
 
 
-  <title>C++: file reading and writing | CagyJ</title>
+  <title>Numpy&Pandas 001: Attributes and Array in NumPy | CagyJ</title>
   
 
 
@@ -243,7 +244,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://CagyJ.github.io/C-file-reading-and-writing/">
+    <link itemprop="mainEntityOfPage" href="http://CagyJ.github.io/Numpy-Pandas-001-Attributes-and-Array-in-NumPy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cagy Jiao">
@@ -260,7 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++: file reading and writing</h1>
+          <h1 class="post-title" itemprop="name headline">Numpy&Pandas 001: Attributes and Array in NumPy</h1>
         
 
         <div class="post-meta">
@@ -272,8 +273,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-12T16:00:58+01:00">
-                2020-03-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-13T00:24:13+01:00">
+                2020-03-13
               </time>
             
 
@@ -310,75 +311,51 @@
       
 
       
-        <p>Firstly, everything you do before, do not forget to import “&lt;fstream&gt;”.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include &lt;fstream&gt;</span><br></pre></td></tr></table></figure>
+        <p>At first, import the numpy. Normally, we will import it as np for calling it easily.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="Three-common-operations-in-“-lt-fstream-gt-”"><a href="#Three-common-operations-in-“-lt-fstream-gt-”" class="headerlink" title="Three common operations in “&lt;fstream&gt;”"></a>Three common operations in “&lt;fstream&gt;”</h3><p>As a noob in C++, I will only introduce these three in this post. If I am gonna be in higher level someday, I will write down more about them, even whole thing. </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ofstream   <span class="comment">//write</span></span><br><span class="line">ifstream	<span class="comment">//read</span></span><br><span class="line">fstream		<span class="comment">//write and read</span></span><br></pre></td></tr></table></figure>
+<h3 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h3><p>Using a method called <strong>array</strong> to turn a list to an array.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>],</span><br><span class="line">				  [<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>]])</span><br></pre></td></tr></table></figure>
 
+<p>First attribute I would like to talk about is the <strong>dimension</strong> of the array.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.ndim	<span class="comment">#2</span></span><br></pre></td></tr></table></figure>
 
+<p>Second is the number of <strong>rows and columns</strong> of the array.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.shape <span class="comment">#(2,3)</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="Open-a-File"><a href="#Open-a-File" class="headerlink" title="Open a File"></a>Open a File</h3><p>In class “&lt;fstream&gt;”, there is an inner function <strong>open()</strong>, which is work on it through <strong><em>ofstream</em></strong>, <strong><em>ifstream</em></strong> and <strong><em>fstream</em></strong> objects.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.<span class="built_in">open</span>(filename, mode, prot)</span><br></pre></td></tr></table></figure>
+<p>Last is the <strong>number</strong> of the array.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.size	<span class="comment">#6</span></span><br></pre></td></tr></table></figure>
 
-<p>There are three parameters in this function, first one is the <strong>filename</strong>, second is the <strong>way</strong> to open it( <a href="http://www.cplusplus.com/doc/tutorial/files/" target="_blank" rel="noopener">more..</a>) and third one is the <strong>character</strong> of the file( unusual using).</p>
-<p>Here, I would like to say a little bit more about class “&lt;ios&gt;”.</p>
-<table>
-<thead>
-<tr>
-<th>ios::in</th>
-<th>open a file for input</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ios::out</td>
-<td>open a file for output</td>
-</tr>
-<tr>
-<td>ios::ate</td>
-<td>initial position: end of the file</td>
-</tr>
-<tr>
-<td>ios::app</td>
-<td>output in the end of the file</td>
-</tr>
-<tr>
-<td>ios::binary</td>
-<td>open a file via binary</td>
-</tr>
-</tbody></table>
-<p>Normally, we use them in combination. So, we do this way:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fstream f;</span><br><span class="line">f.<span class="built_in">open</span>(<span class="string">"test.txt"</span>, ios::in|ios::out|ios::binary)</span><br></pre></td></tr></table></figure>
+<h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><p>We have already known how we make an array. Let us see more things on Array.</p>
+<h4 id="Data-type"><a href="#Data-type" class="headerlink" title="Data type"></a>Data type</h4><p>We can figure a type of data when we make it.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a1 = np.array([<span class="number">2</span>,<span class="number">22</span>,<span class="number">222</span>],dtype=np.int16)</span><br><span class="line">a1.dtype	<span class="comment">#dtype('int16')</span></span><br></pre></td></tr></table></figure>
 
-<p>Otherwise, here is also a default way without function <strong>open()</strong>, cpp has prepare it in . We can use them directly:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ofstream out(&quot;...&quot;, ios::out);</span><br><span class="line">ifstream in(&quot;...&quot;, ios::in);</span><br><span class="line">fstream foi(&quot;...&quot;, ios::in|ios::out);</span><br></pre></td></tr></table></figure>
+<p>It also have others type. For example, int32, float64…</p>
+<h4 id="Initial-Array"><a href="#Initial-Array" class="headerlink" title="Initial Array"></a>Initial Array</h4><p>It support some special types to make an array quickly, because of the unknown value(fixed size) sometimes we need.</p>
+<p>Firstly, we can initial a <strong>zero array</strong>, we need input a shape of the array.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a1 = np.zeros((<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#array([[0., 0., 0.],</span></span><br><span class="line"><span class="comment">#       [0., 0., 0.],</span></span><br><span class="line"><span class="comment">#       [0., 0., 0.]])</span></span><br></pre></td></tr></table></figure>
 
+<p>Also, we can initial a <strong>one array</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a2 = np.ones((<span class="number">3</span>,<span class="number">4</span>),dtype=np.int)</span><br><span class="line"></span><br><span class="line"><span class="comment">#array([[1, 1, 1, 1],</span></span><br><span class="line"><span class="comment">#       [1, 1, 1, 1],</span></span><br><span class="line"><span class="comment">#       [1, 1, 1, 1]])</span></span><br></pre></td></tr></table></figure>
 
+<p>Besides, empty. But for here it will generate the number that is very close to zero.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a3 = np.empty((<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#array([[[0.00000000e+000, 0.00000000e+000],</span></span><br><span class="line"><span class="comment">#       [0.00000000e+000, 0.00000000e+000]],</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#       [[0.00000000e+000, 5.90902512e-321],</span></span><br><span class="line"><span class="comment">#        [1.37961438e-306, 2.22522596e-306]]])</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="Close-a-File"><a href="#Close-a-File" class="headerlink" title="Close a File"></a>Close a File</h3><p>As <strong>open()</strong> function, here is also a function for closing, which is <strong>close()</strong>.</p>
-<p>After closing, the original object can open another file.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ofstream of;</span><br><span class="line">of.open(&quot;hello.txt&quot;);</span><br><span class="line">of.close();</span><br><span class="line">of.open(&quot;hi.txt&quot;);</span><br><span class="line">...</span><br><span class="line">of.close();</span><br></pre></td></tr></table></figure>
+<p>There is a method, which is likely to <strong>range()</strong> (the method in Python)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a4 = np.arange(<span class="number">1</span>,<span class="number">10</span>,<span class="number">3</span>) <span class="comment">#from 1 to 9 and 3 intervals</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#array([1, 4, 7])</span></span><br></pre></td></tr></table></figure>
 
+<p>And we can change the shape of it, from 1-dim to 2-dim or 3. Be careful, you should think a little bit more about the struct of the new shape.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a5 = np.arange(<span class="number">10</span>).reshape((<span class="number">2</span>,<span class="number">5</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#array([[0, 1, 2, 3, 4],</span></span><br><span class="line"><span class="comment">#       [5, 6, 7, 8, 9]])</span></span><br></pre></td></tr></table></figure>
 
+<p>Besides, there is another one like <strong>arange</strong>, it is <strong>linspace()</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a6 = np.linspace(<span class="number">1</span>,<span class="number">10</span>,<span class="number">4</span>) 	<span class="comment">#from 1 to 10 and split it in 4 parts</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#array([ 1.,  4.,  7., 10.])</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="Reading-and-Writing-on-txt-file"><a href="#Reading-and-Writing-on-txt-file" class="headerlink" title="Reading and Writing on txt file"></a>Reading and Writing on txt file</h3><h4 id="Read"><a href="#Read" class="headerlink" title="Read"></a>Read</h4><p>Same as outputting in the terminal, we can also use <strong>&lt;&lt;</strong> to write the data into a file. (Extension: end of the post)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void openFile(string fileName)&#123;</span><br><span class="line">    string data;</span><br><span class="line">    ifstream in;</span><br><span class="line">    in.open(fileName.c_str());</span><br><span class="line">    if(in.is_open())&#123;</span><br><span class="line">        while(!in.eof())&#123;</span><br><span class="line">            string line;</span><br><span class="line">            getline(in, line);</span><br><span class="line">            cout&lt;&lt;line&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Write"><a href="#Write" class="headerlink" title="Write"></a>Write</h4><p>Using <strong>&gt;&gt;</strong> as well…</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">writeFile</span><span class="params">(<span class="built_in">string</span> fileName)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ofstream out;</span><br><span class="line">    out.<span class="built_in">open</span>(fileName);</span><br><span class="line">    <span class="keyword">if</span>(out.is_open())&#123;</span><br><span class="line">        out&lt;&lt;<span class="string">"test1\n"</span>;</span><br><span class="line">        out&lt;&lt;<span class="string">"test2\n"</span>;</span><br><span class="line"></span><br><span class="line">        out.<span class="built_in">close</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Extension"><a href="#Extension" class="headerlink" title="Extension"></a>Extension</h3><p>About <strong>cin.ignore()</strong>, it is used when you wanna ignore the last input in the terminal. Usually, the first input may effects the next one.  It is a solution for that problem, it will clear everything after enter including enter.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;  </span><br><span class="line">using   namespace   std;  </span><br><span class="line">int main()  </span><br><span class="line">&#123;  </span><br><span class="line">    char   str1[30],str2[30],str3[30];  </span><br><span class="line">    cout   &lt;&lt;   &quot;Name：&quot;;  </span><br><span class="line">    cin&gt;&gt;str1;  </span><br><span class="line">    cout&lt;&lt;&quot;Address：&quot;;  </span><br><span class="line">    cin.ignore();  </span><br><span class="line">    cin.getline(str2,30,&#39;a&#39;);   </span><br><span class="line">    cout&lt;&lt;str2;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Thanks for your reading. I am happy, if it is useful for you.</p>
+<p>We can also change the shape of it.</p>
+<p>Thanks for your reading, I hope it is useful for you.</p>
 <hr>
-<h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3><blockquote>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><blockquote>
 <p>Illustrator /  <strong>Cagy</strong>     </p>
 <p>Text /  <strong>Cagy</strong>     </p>
 <p>Editor /  <strong>Cagy</strong></p>
@@ -425,7 +402,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C/" rel="tag"># C++</a>
+            <a href="/tags/Numpy/" rel="tag"># Numpy</a>
+          
+            <a href="/tags/Pandas/" rel="tag"># Pandas</a>
           
         </div>
       
@@ -453,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/CV004-Convolution/" rel="next" title="CV004: Convolution">
-                <i class="fa fa-chevron-left"></i> CV004: Convolution
+              <a href="/Numpy-Pandas-000-Introduction-and-Installation/" rel="next" title="Numpy&Pandas 000: Introduction and Installation">
+                <i class="fa fa-chevron-left"></i> Numpy&Pandas 000: Introduction and Installation
               </a>
             
           </div>
@@ -462,10 +441,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Numpy-Pandas-000-Introduction-and-Installation/" rel="prev" title="Numpy&Pandas 000: Introduction and Installation">
-                Numpy&Pandas 000: Introduction and Installation <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -610,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Three-common-operations-in-“-lt-fstream-gt-”"><span class="nav-number">1.</span> <span class="nav-text">Three common operations in “&lt;fstream&gt;”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Open-a-File"><span class="nav-number">2.</span> <span class="nav-text">Open a File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Close-a-File"><span class="nav-number">3.</span> <span class="nav-text">Close a File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reading-and-Writing-on-txt-file"><span class="nav-number">4.</span> <span class="nav-text">Reading and Writing on txt file</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Read"><span class="nav-number">4.1.</span> <span class="nav-text">Read</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Write"><span class="nav-number">4.2.</span> <span class="nav-text">Write</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Extension"><span class="nav-number">5.</span> <span class="nav-text">Extension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#END"><span class="nav-number">6.</span> <span class="nav-text">END</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Attributes"><span class="nav-number">1.</span> <span class="nav-text">Attributes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array"><span class="nav-number">2.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-type"><span class="nav-number">2.1.</span> <span class="nav-text">Data type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Initial-Array"><span class="nav-number">2.2.</span> <span class="nav-text">Initial Array</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">3.</span> <span class="nav-text">End</span></a></li></ol></div>
             
 
           </div>
