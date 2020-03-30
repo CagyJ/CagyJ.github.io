@@ -87,7 +87,7 @@
 <meta property="og:description" content="We make two arrays first. 123456789a &#x3D; np.array([[2,2,2],[3,3,3],[4,4,4]])b &#x3D; np.ones((3,3))#array([[2, 2, 2],#       [3, 3, 3],#       [4, 4, 4]])#array([[1., 1., 1.],#       [1., 1., 1.],#       [1.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-13T11:16:43.000Z">
-<meta property="article:modified_time" content="2020-03-13T16:24:14.036Z">
+<meta property="article:modified_time" content="2020-03-30T23:17:21.672Z">
 <meta property="article:author" content="Cagy Jiao">
 <meta property="article:tag" content="Numpy">
 <meta property="article:tag" content="Pandas">
@@ -324,7 +324,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">np.sin(a)</span><br><span class="line"></span><br><span class="line"><span class="comment">#array([[ 0.90929743,  0.90929743,  0.90929743],</span></span><br><span class="line"><span class="comment">#       [ 0.14112001,  0.14112001,  0.14112001],</span></span><br><span class="line"><span class="comment">#       [-0.7568025 , -0.7568025 , -0.7568025 ]])</span></span><br></pre></td></tr></table></figure>
 
 <p>For the cos and tan or others is same.</p>
-<p>We can do some <strong>conditions</strong>, but the output is bool value</p>
+<p>We can do some <strong>conditions</strong>, but the output is boolean value</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a&gt;<span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#array([[False, False, False],</span></span><br><span class="line"><span class="comment">#       [False, False, False],</span></span><br><span class="line"><span class="comment">#       [ True,  True,  True]]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a==<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#array([[ True,  True,  True],</span></span><br><span class="line"><span class="comment">#       [False, False, False],</span></span><br><span class="line"><span class="comment">#       [False, False, False]])</span></span><br></pre></td></tr></table></figure>
 
 <p>If we wanna compute the value of <strong>multiplication of  the matrix</strong>, we need a method of the numpy</p>
@@ -352,7 +352,7 @@
 <p>Similarly, a minus method. But there are some differences. This method is still keep the type of the original array and the number of the element in every row will decrease one.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">np.diff(A)</span><br><span class="line"><span class="comment">#array([[-1, -1, -1],</span></span><br><span class="line"><span class="comment">#       [-1, -1, -1],</span></span><br><span class="line"><span class="comment">#       [-1, -1, -1]])</span></span><br></pre></td></tr></table></figure>
 
-<p>A detection method to check whether it is zero or not, if it is not zero, the position of it will be written down.</p>
+<p>A detection method to check whether it is zero or not, if it is not zero, the position of it will be written down. e.g. (0,0), (0,1), (0,2)…</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">np.nonzero(A) </span><br><span class="line"><span class="comment">#(array([0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2], dtype=int64),</span></span><br><span class="line"><span class="comment"># array([0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3], dtype=int64))</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#it means (0,1) (0,1)... of the original array are not zero</span></span><br></pre></td></tr></table></figure>
 
 <p>It also has <strong>sort</strong>  method, differently, it sorts every row, not all elements</p>
