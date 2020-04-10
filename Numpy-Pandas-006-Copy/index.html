@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="Thanks for your reading, I hope it is useful for you.  End Illustrator &#x2F;  Cagy      Text &#x2F;  Cagy      Editor &#x2F;  Cagy Design &#x2F;  Cagy">
+<meta name="description" content="We said a simple array, 1234import numpy as npa &#x3D; np.arange((4))#array([0, 1, 2, 3])  CopyNormally, we set b is equal to a and c is equal to b. 12345b &#x3D; ac &#x3D; b#b: array([0, 1, 2, 3])#c: array([0, 1, 2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Numpy&amp;Pandas 006: Copy">
 <meta property="og:url" content="http://cagyj.github.io/Numpy-Pandas-006-Copy/index.html">
 <meta property="og:site_name" content="CagyJ">
-<meta property="og:description" content="Thanks for your reading, I hope it is useful for you.  End Illustrator &#x2F;  Cagy      Text &#x2F;  Cagy      Editor &#x2F;  Cagy Design &#x2F;  Cagy">
+<meta property="og:description" content="We said a simple array, 1234import numpy as npa &#x3D; np.arange((4))#array([0, 1, 2, 3])  CopyNormally, we set b is equal to a and c is equal to b. 12345b &#x3D; ac &#x3D; b#b: array([0, 1, 2, 3])#c: array([0, 1, 2">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-07T15:02:25.000Z">
-<meta property="article:modified_time" content="2020-04-07T15:03:48.586Z">
+<meta property="article:modified_time" content="2020-04-10T08:53:59.485Z">
 <meta property="article:author" content="Cagy Jiao">
 <meta property="article:tag" content="Numpy">
 <meta property="article:tag" content="Pandas">
@@ -311,7 +311,24 @@
       
 
       
-        <p>Thanks for your reading, I hope it is useful for you.</p>
+        <p>We said a simple array,</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange((<span class="number">4</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#array([0, 1, 2, 3])</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Copy"><a href="#Copy" class="headerlink" title="Copy"></a>Copy</h3><p>Normally, we set <strong>b</strong> is equal to <strong>a</strong> and <strong>c</strong> is equal to <strong>b</strong>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">b = a</span><br><span class="line">c = b</span><br><span class="line"></span><br><span class="line"><span class="comment">#b: array([0, 1, 2, 3])</span></span><br><span class="line"><span class="comment">#c: array([0, 1, 2, 3])</span></span><br></pre></td></tr></table></figure>
+
+<p>When we change a value in array <strong>a</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a[<span class="number">0</span>] = <span class="number">99</span></span><br></pre></td></tr></table></figure>
+
+<p>Will the array of <strong>b</strong> be changed? And <strong>c</strong>?</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array([<span class="number">99</span>,  <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+
+<p>They all changed like above. So we are sure they have a link in each other, if we change any value of them, they all will be changed.</p>
+<h3 id="Deep-Copy"><a href="#Deep-Copy" class="headerlink" title="Deep Copy"></a>Deep Copy</h3><p>In numpy, we have a inner function to copy and there is no any link between.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d = a.copy()</span><br></pre></td></tr></table></figure>
+
+<p>However we change the value of <strong>a</strong>, <strong>d</strong> will not change anything.</p>
+<p>Thanks for your reading, I hope it is useful for you.</p>
 <hr>
 <h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><blockquote>
 <p>Illustrator /  <strong>Cagy</strong>     </p>
@@ -543,7 +560,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.</span> <span class="nav-text">End</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Copy"><span class="nav-number">1.</span> <span class="nav-text">Copy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deep-Copy"><span class="nav-number">2.</span> <span class="nav-text">Deep Copy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">3.</span> <span class="nav-text">End</span></a></li></ol></div>
             
 
           </div>
